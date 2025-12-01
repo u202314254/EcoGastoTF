@@ -1,0 +1,31 @@
+<div class="insignias-wrapper">
+
+    <h1 class="title">Mis Insignias</h1>
+
+    <div class="cards-grid">
+        <div class="insignia-card" *ngFor="let ins of insignias">
+
+            <div class="icon-circle" [style.background]="getColorIcono(ins.meta?.recurso?.nombreRecurso) + '20'"
+                [style.color]="getColorIcono(ins.meta?.recurso?.nombreRecurso)">
+                <mat-icon>
+                    {{ getIcono(ins.meta?.recurso?.nombreRecurso) }}
+                </mat-icon>
+            </div>
+
+            <div class="info">
+                <h2 class="nombre">{{ ins.nombre_logro }}</h2>
+                <p class="recurso">
+                    {{ ins.meta?.recurso?.nombreRecurso }}
+                </p>
+
+                <p><strong>Puntos:</strong> {{ ins.puntos }} puntos</p>
+
+                <p>
+                    <strong>Meta relacionada:</strong>
+                    {{ ins.meta?.nombre || '—' }}
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>

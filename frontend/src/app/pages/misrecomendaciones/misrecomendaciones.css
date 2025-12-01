@@ -1,0 +1,122 @@
+.reco-container {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* --------------------- */
+/*      LADO IZQUIERDO   */
+/* --------------------- */
+
+.left-side { height: 100%; }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.btn-negro {
+  background: #000 !important;
+  color: white !important;
+}
+
+/* FORMULARIO */
+.form-card {
+  padding: 18px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.btn-save {
+  background: #4caf50;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.cards-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.card {
+  padding: 14px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.card-footer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete-btn mat-icon {
+  color: red;
+}
+
+/* --------------------- */
+/*      CHAT DERECHA     */
+/* --------------------- */
+
+.chat-container {
+  height: 80vh;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* (EL MISMO CSS DE TU CHAT QUE YA FUNCIONA) */
+.chat-header {
+  padding: 16px;
+  background: linear-gradient(135deg, #e8f5e9, #e3f2fd);
+}
+
+.chat-body {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  background: #f5f7fa;
+}
+
+.chat-input {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.send-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #4caf50;
+  border: none;
+  color: white;
+}

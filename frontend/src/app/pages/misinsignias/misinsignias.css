@@ -1,0 +1,74 @@
+.insignias-wrapper {
+    padding: 20px 40px;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #222;
+}
+
+.cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.insignia-card {
+    width: 330px;
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    gap: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    transition: 0.2s;
+}
+
+.insignia-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.icon-circle {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #eaf7ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    color: #00a7ff;
+}
+
+.info {
+    flex: 1;
+}
+
+.nombre {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.recurso {
+    margin: 2px 0 8px 0;
+    font-size: 14px;
+    color: #666;
+    font-weight: 400;
+    /* 🟢 MENOS BOLD */
+}
+
+p {
+    margin: 3px 0;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+strong {
+    font-weight: 600;
+    /* suave, no bold exagerado */
+}
