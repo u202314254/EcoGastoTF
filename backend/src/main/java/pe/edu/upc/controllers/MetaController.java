@@ -78,7 +78,7 @@ public class MetaController {
     }
 
     @GetMapping("/incompleta")
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'CLIENT')")
+    @PreAuthorize("hasAnyAuthority('CLIENT')")
     public ResponseEntity<?> obtenerCantidadMetasCompletadas() {
         List<CantidadMetaActivaDTO> listaDTO = new ArrayList<>();
         List<String[]> fila = mS.findMetasActivasByUsuario();
