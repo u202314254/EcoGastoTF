@@ -35,7 +35,7 @@ public class HogarController {
     }
 
     @GetMapping("/{id}")
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'TESTER')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'CLIENT')")
     public ResponseEntity<?> listarId(@PathVariable("id") Integer id) {
         Hogar h = hS.listId(id);
         if (h == null) {
@@ -47,7 +47,7 @@ public class HogarController {
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'TESTER')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'CLIENT')")
     public ResponseEntity<String> eliminar(@PathVariable("id") Integer id) {
         Hogar h = hS.listId(id);
         if (h == null) {
@@ -58,7 +58,7 @@ public class HogarController {
     }
 
     @PutMapping
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'TESTER')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'CLIENT')")
     public ResponseEntity<String> modificar(@RequestBody HogarDTO dto) {
         ModelMapper m = new ModelMapper();
         Hogar h = m.map(dto,Hogar.class);
