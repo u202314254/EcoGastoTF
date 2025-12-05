@@ -30,7 +30,7 @@ public class RecomendacionController {
         }).collect((Collectors.toList()));
     }
     @PostMapping
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'CLIENT')")
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
     public void insertar(@RequestBody RecomendacionDTO dto){
         ModelMapper m = new ModelMapper();
         Recomendacion r = m.map(dto,Recomendacion.class);
@@ -75,7 +75,7 @@ public class RecomendacionController {
     }
 
     @GetMapping("/recurso")
-    @PreAuthorize("hasAnyAuthority('CLIENT')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'CLIENT')")
     public ResponseEntity<?> obtenerRecomendacionPorRecurso(){
         List<RecomendacionPorRecursoDTO> listaDTO = new ArrayList<>();
         List<String[]> fila = rS.findRecomendacionesPorRecurso();
