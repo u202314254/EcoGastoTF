@@ -53,7 +53,7 @@ public class InsigniaController {
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'CLIENT')")
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
     public ResponseEntity<String> eliminar(@PathVariable("id") Integer id){
         Insignia i = service.listId(id);
         if (i == null){
