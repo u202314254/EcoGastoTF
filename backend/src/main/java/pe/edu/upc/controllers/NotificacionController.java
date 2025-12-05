@@ -24,7 +24,7 @@ public class NotificacionController {
     private INotificacionService service;
 
     @GetMapping
-    @PreAuthorize("hasAnyAuthority('CLIENT')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'CLIENT')")
     public List<NotificacionDTO> listar() {
         return service.list().stream().map(y -> {
             ModelMapper m = new ModelMapper();
@@ -33,7 +33,7 @@ public class NotificacionController {
     }
 
     @PostMapping
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'CLIENT')")
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
     public void insertar(@RequestBody NotificacionDTO dto) {
         ModelMapper m = new ModelMapper();
         Notificacion n = m.map(dto, Notificacion.class);
@@ -55,7 +55,7 @@ public class NotificacionController {
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAnyAuthority('CLIENT')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'CLIENT')")
     public ResponseEntity<String> eliminar(@PathVariable("id") Integer id) {
         Notificacion n = service.listId(id);
         if (n == null) {
@@ -105,7 +105,7 @@ public class NotificacionController {
     }
 
     @GetMapping("/reporte-usuarios")
-    @PreAuthorize("hasAuthority('CLIENT')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<?> obtenerNotificacionesPorUsuario() {
         List<NotificacionesxUsuarioDTO> listaDTO = new ArrayList<>();
         List<String[]> fila = service.obtenerNotificacionesPorUsuario();
