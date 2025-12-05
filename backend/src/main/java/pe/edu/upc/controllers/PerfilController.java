@@ -33,7 +33,7 @@ public class PerfilController {
     }
 
     @GetMapping("/{id}")
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'TESTER')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'CLIENT')")
     public ResponseEntity<?> listarId(@PathVariable("id") Integer id){
         Perfil p = pS.listId(id);
         if (p == null){
@@ -47,7 +47,7 @@ public class PerfilController {
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'TESTER')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'CLIENT')")
     public ResponseEntity<String> eliminar(@PathVariable("id") Integer id){
         Perfil p = pS.listId(id);
         if (p == null){
@@ -59,7 +59,7 @@ public class PerfilController {
     }
 
     @PutMapping
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'TESTER')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'CLIENT')")
     public ResponseEntity<String> modificar(@RequestBody PerfilDTO dto){
         ModelMapper m = new ModelMapper();
         Perfil p = m.map(dto,Perfil.class);
