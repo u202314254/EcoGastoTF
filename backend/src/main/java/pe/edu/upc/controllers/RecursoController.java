@@ -27,7 +27,7 @@ public class RecursoController {
         }).collect(Collectors.toList());
     }
     @PostMapping
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'CLIENT')")
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
     public void insertar(@RequestBody RecursoDTO dto){
         ModelMapper m = new ModelMapper();
         Recurso r = m.map(dto, Recurso.class);
@@ -76,22 +76,4 @@ public class RecursoController {
         rS.update(r);
         return ResponseEntity.ok("Registro con ID " + r.getIdRecurso() + " modificado correctamente.");
     }
-
-    //@GetMapping("/consumidos")
-    //public ResponseEntity<?> obtenerTotaldeUsuariosxRecurso(){
-    //    List<RecursoxConsumoDTO> listaDTO = new ArrayList<>();
-    //    List<String[]> fila = rS.listarRecursos();
-    //    if (fila.isEmpty()){
-    //        return ResponseEntity.status(HttpStatus.NOT_FOUND)
-    //                .body("No hay consumos por recurso.");
-    //    }
-    //    for(String[] g:fila){
-    //        RecursoxConsumoDTO dto = new RecursoxConsumoDTO();
-    //        dto.setIdRecurso(Integer.parseInt(g[0]));
-    //        dto.setNombreRecurso(g[1]);
-    //        dto.setTotalUsuarios(Integer.parseInt(g[2]));
-    //        listaDTO.add(dto);
-    //    }
-    //    return ResponseEntity.ok(listaDTO);
-    //}
 }
